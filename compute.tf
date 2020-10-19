@@ -5,7 +5,7 @@ resource "ibm_is_instance" "inst1" {
     security_groups = [ ibm_is_vpc.vpc.default_security_group.id ]
     subnet = ibm_is_subnet.subnet1.id
   }
-  keys = [ data.ibm_is_sshkey.key.id ]
+  keys = [ data.ibm_is_ssh_key.key.id ]
   resource_group = ibm_resource_group.group.id
   profile = "cx2.2x4"
   vpc = ibm_is_vpc.vpc.id
