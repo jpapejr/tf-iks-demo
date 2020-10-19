@@ -11,5 +11,5 @@ resource "ibm_is_instance" "inst1" {
   vpc = ibm_is_vpc.vpc.id
   image = "r014-ed3f775f-ad7e-4e37-ae62-7199b4988b00"
   user_data = file("${path.module}/bootstrap.sh")
-  depends_on = [ ibm_is_vpc.vpc, ibm_is_subnet.subnet1, ibm_is_floating_ip.fip, ibm_resource_group.group ]
+  depends_on = [ ibm_is_vpc.vpc, ibm_is_subnet.subnet1, ibm_resource_group.group ]
 }
