@@ -1,5 +1,5 @@
 resource "ibm_resource_instance" "cos_instance" {
-  name     = "${var.project_name}-${var.environment}-ocp_cos_instance"
+  name     = "${var.project}-${var.environment}-ocp_cos_instance"
   service  = "cloud-object-storage"
   plan     = "standard"
   location = "global"
