@@ -57,7 +57,7 @@ resource "ibm_is_public_gateway" "gw2" {
 resource "ibm_is_floating_ip" "fip" {
   name = "${var.project}-${var.environment}-fip"
   resource_group = ibm_resource_group.group.id 
-  target = ibm_is_instance.primary_network_interface[0].id
+  target = ibm_is_instance.inst1.primary_network_interface[0].id
   depends_on = [ ibm_is_instance.inst1 ]
 }
 
