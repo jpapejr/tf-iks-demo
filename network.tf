@@ -25,6 +25,7 @@ resource "ibm_is_subnet" "subnet1" {
   name = "${var.project}-${var.environment}-subnet1"
   vpc = ibm_is_vpc.vpc.id
   resource_group = ibm_resource_group.group.id
+  zone = "us-east-1"
   depends_on = [ ibm_is_vpc_address_prefix.prefix1, ibm_resource_group.group ]
 }
 
@@ -33,7 +34,7 @@ resource "ibm_is_subnet" "subnet2" {
   name = "${var.project}-${var.environment}-subnet2"
   vpc = ibm_is_vpc.vpc.id
   resource_group = ibm_resource_group.group.id
-  public_gateway = ibm_is_public_gateway.gw2
+  zone = "us-east_2"
   depends_on = [ ibm_is_vpc_address_prefix.prefix2, ibm_resource_group.group ]
 }
 
