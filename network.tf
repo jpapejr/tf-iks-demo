@@ -21,7 +21,7 @@ resource "ibm_is_vpc_address_prefix" "prefix2" {
 }
 
 resource "ibm_is_subnet" "subnet1" {
-  ipv4_cidr_block = "172.26.1.0/26"
+  ipv4_cidr_block = "172.26.0.0/26"
   name = "${var.project}-${var.environment}-subnet1"
   vpc = ibm_is_vpc.vpc.id
   resource_group = ibm_resource_group.group.id
@@ -30,7 +30,7 @@ resource "ibm_is_subnet" "subnet1" {
 }
 
 resource "ibm_is_subnet" "subnet2" {
-  ipv4_cidr_block = "172.26.2.0/26"
+  ipv4_cidr_block = "172.26.1.0/26"
   name = "${var.project}-${var.environment}-subnet2"
   vpc = ibm_is_vpc.vpc.id
   resource_group = ibm_resource_group.group.id
