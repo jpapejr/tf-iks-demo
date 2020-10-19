@@ -42,6 +42,7 @@ resource "ibm_is_public_gateway" "gw1" {
   name = "${var.project}-${var.environment}-pgw1"
   resource_group = ibm_resource_group.group.id
   vpc = ibm_is_vpc.vpc.id
+  zone = "us-east-1"
   depends_on = [ ibm_is_vpc.vpc, ibm_resource_group.group ]
 }
 
@@ -49,6 +50,7 @@ resource "ibm_is_public_gateway" "gw2" {
   name = "${var.project}-${var.environment}-pgw2"
   resource_group = ibm_resource_group.group.id
   vpc = ibm_is_vpc.vpc.id
+  zone = "us-east-2"
   depends_on = [ ibm_is_vpc.vpc, ibm_resource_group.group ]
 }
 
