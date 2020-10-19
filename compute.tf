@@ -8,6 +8,7 @@ resource "ibm_is_instance" "inst1" {
   keys = [ data.ibm_is_ssh_key.key.id ]
   resource_group = ibm_resource_group.group.id
   profile = "cx2.2x4"
+  zone = "us-east-1"
   vpc = ibm_is_vpc.vpc.id
   image = "r014-ed3f775f-ad7e-4e37-ae62-7199b4988b00"
   user_data = file("${path.module}/bootstrap.sh")
