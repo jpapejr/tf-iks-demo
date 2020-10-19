@@ -10,7 +10,7 @@ resource "ibm_container_vpc_cluster" "cluster" {
   disable_public_service_endpoint = true
   flavor = "bx2.4x16"
   name = "${var.project_name}-${var.environment}-cluster"
-  kube_version = "4.4_openshift"
+  kube_version = var.k8s_version
   resource_group_id = ibm_resource_group.group.id 
   vpc_id = ibm_is_vpc.vpc.id 
   worker_count = 2
