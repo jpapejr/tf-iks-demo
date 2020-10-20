@@ -72,3 +72,25 @@ resource "ibm_is_security_group_rule" "rule1" {
   ip_version = "ipv4"
 }
 
+resource "ibm_is_security_group_rule" "rule2" {
+  direction = "inbound"
+  group = ibm_is_vpc.vpc.default_security_group
+  remote = "172.26.0.0/26"
+  tcp {
+    port_min = 30000
+    port_max = 32767
+  }
+  ip_version = "ipv4"
+}
+
+resource "ibm_is_security_group_rule" "rule3" {
+  direction = "inbound"
+  group = ibm_is_vpc.vpc.default_security_group
+  remote = "172.26.1.0/26"
+  tcp {
+    port_min = 30000
+    port_max = 32767
+  }
+  ip_version = "ipv4"
+}
+
