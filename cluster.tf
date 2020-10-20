@@ -1,5 +1,5 @@
 resource "ibm_container_vpc_cluster" "cluster" {
-  cos_instance_crn                = ibm_resource_instance.cos_instance.id
+  cos_instance_crn                = ibm_resource_instance.cos_instance[count.index].id
   disable_public_service_endpoint = true
   flavor                          = "bx2.4x16"
   name                            = "${var.project}-${var.environment}-cluster"
