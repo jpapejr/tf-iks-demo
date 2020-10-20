@@ -1,8 +1,9 @@
 resource "ibm_resource_instance" "cos_instance" {
-  name     = "${var.project}-${var.environment}-ocp_cos_instance"
-  service  = "cloud-object-storage"
-  plan     = "standard"
-  location = "global"
+  name           = "${var.project}-${var.environment}-ocp_cos_instance"
+  service        = "cloud-object-storage"
+  plan           = "standard"
+  resource_group = ibm_resource_group.group.id
+  location       = "global"
 }
 
 resource "ibm_container_vpc_cluster" "cluster" {
