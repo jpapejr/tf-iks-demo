@@ -26,6 +26,7 @@ resource "ibm_is_subnet" "subnet1" {
   vpc             = ibm_is_vpc.vpc.id
   resource_group  = ibm_resource_group.group.id
   zone            = "us-east-1"
+  public_gateway  = ibm_is_public_gateway.gw1.id
   depends_on      = [ibm_is_vpc_address_prefix.prefix1, ibm_resource_group.group]
 }
 
@@ -35,6 +36,7 @@ resource "ibm_is_subnet" "subnet2" {
   vpc             = ibm_is_vpc.vpc.id
   resource_group  = ibm_resource_group.group.id
   zone            = "us-east-2"
+  public_gateway  = ibm_is_public_gateway.gw2.id
   depends_on      = [ibm_is_vpc_address_prefix.prefix2, ibm_resource_group.group]
 }
 
