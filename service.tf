@@ -3,7 +3,7 @@ resource "ibm_resource_group" "group" {
 }
 
 resource "ibm_resource_instance" "cos_instance" {
-  count             = var.usecos
+  count             = var.usecos ? 1 : 0 
   name              = "${var.project}-${var.environment}-ocp_cos_instance"
   service           = "cloud-object-storage"
   plan              = "standard"
