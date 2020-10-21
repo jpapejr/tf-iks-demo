@@ -8,6 +8,7 @@ resource "ibm_container_vpc_cluster" "cluster" {
   vpc_id                          = ibm_is_vpc.vpc.id
   worker_count                    = 2
   wait_till                       = "OneWorkerNodeReady"
+  force_delete_storage            = "true"
   zones {
     name      = "us-east-1"
     subnet_id = ibm_is_subnet.subnet1.id
