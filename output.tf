@@ -9,3 +9,7 @@ output "cluster_endpoint" {
 output "clusterid" {
   value = ibm_container_vpc_cluster.cluster.id
 }
+
+output "private_key" {
+    value = tls_private_key.privatekey.private_key_pem
+}
